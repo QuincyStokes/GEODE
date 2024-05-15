@@ -15,3 +15,5 @@ MonoBehaviour:
   cooldown: 2
   item_type: 2
   item_sprite: {fileID: 21300000, guid: b5867bc93dfd2d44d9f228ae01fa9fb5, type: 3}
+  pickupCooldown: 5
+  lastTimeDropped: 108.524475

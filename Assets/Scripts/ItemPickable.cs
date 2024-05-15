@@ -9,4 +9,8 @@ public class ItemPickable : MonoBehaviour, IPickable
     public void PickItem() {
         Destroy(gameObject);
     }
+
+    public void DropItem() {
+        itemScriptableObject.lastTimeDropped = Time.time;
+    }
 }

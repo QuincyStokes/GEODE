@@ -10,7 +10,17 @@ public class ItemScriptableObject : ScriptableObject
     public itemType item_type;
     public Sprite item_sprite;
    
+    public float pickupCooldown;
+    public float lastTimeDropped;
+
+    public void OnEnable() {
+        Debug.Log("Enabling item with LTD = " + Time.time.ToString());
+        lastTimeDropped = Time.time;
+    }
+
 }
+
+
 
 public enum itemType {
     Pickaxe,
