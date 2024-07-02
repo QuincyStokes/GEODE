@@ -22,6 +22,7 @@ public class BuildingSystem : MonoBehaviour {
     void Update() {
 
         ItemScriptableObject item = InventoryManager.instance.GetSelectedItem(false);
+        PlayerController.currentItem = item;
         playerPos = mainTilemap.WorldToCell(transform.position);
         if (item != null)
         {
@@ -55,7 +56,6 @@ public class BuildingSystem : MonoBehaviour {
         //If that tile isn't the one already highlighted
         if (highlightedTilePos != mouseGridPos){
             //Erase the highlight on the currently highlighted tile
-            print("ERASING HIGHLIGHt");
             tempTilemap.SetTile(highlightedTilePos, null);
 
             //Get the new tile
@@ -67,10 +67,8 @@ public class BuildingSystem : MonoBehaviour {
                     //In the future, highlightTile should be the preview of whatever we're holding.
                     tempTilemap.SetTile(mouseGridPos, highlightTile);
                     highlightedTilePos = mouseGridPos;
-                    print("HIGHLIGHTING");
                     highlighted = true;
                 } else {
-                    print("highlight=false IN IF");
                     highlighted = false;
                     highlightedTilePos = new Vector3Int(-999, 999, 0);
                 }

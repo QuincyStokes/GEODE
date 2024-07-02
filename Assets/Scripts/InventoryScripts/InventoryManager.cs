@@ -12,6 +12,7 @@ public class InventoryManager : MonoBehaviour
     public int maxStackedItems = 10;
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
+    public GameObject inventory;
 
     int selectedSlot = -1; //default -1 because nothing selected
 
@@ -33,6 +34,13 @@ public class InventoryManager : MonoBehaviour
                 ChangeSelectedSlot(number-1);
             }
         }
+        if (Input.GetKeyDown(KeyCode.E)) {
+            if(inventory.activeSelf == true) {
+                inventory.SetActive(false);
+            }  else {
+                inventory.SetActive(true);
+            } 
+        }
     }
 
     void ChangeSelectedSlot(int newValue) {
@@ -40,7 +48,7 @@ public class InventoryManager : MonoBehaviour
             inventorySlots[selectedSlot].Deselect();
 
         }
-
+        
         inventorySlots[newValue].Select();
         selectedSlot = newValue;
     }

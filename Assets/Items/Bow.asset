@@ -18,6 +18,9 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 5
-  lastTimeDropped: 3.7916512
+  lastTimeDropped: 22.94332
+  swingable: 0
+  damage: 10
+  swingSpeed: 0
   stackable: 0
-  item_sprite: {fileID: 21300000, guid: b5867bc93dfd2d44d9f228ae01fa9fb5, type: 3}
+  item_sprite: {fileID: 394886236057406250, guid: 40bc88c3f1eb70c4c880fcece398cf12, type: 3}

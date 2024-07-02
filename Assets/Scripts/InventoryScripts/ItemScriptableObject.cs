@@ -14,6 +14,10 @@ public class ItemScriptableObject : ScriptableObject
     public Vector2Int range = new Vector2Int(5,5);
     public float pickupCooldown;
     public float lastTimeDropped;
+    public bool swingable;
+    public float damage;
+
+    public float swingSpeed = 0f;
 
 
     [Header("UI Related")]

@@ -15,9 +15,17 @@ public class PlayerController : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     private Animator animationManager;
     SpriteRenderer spriteRenderer;
+    private static SpriteRenderer swingableSR;
     private bool canMove = true;
     public swordScript swordAttack;
     private int direction = 2; 
+
+    public Camera cam;
+    public  GameObject swingable;
+
+    public static ItemScriptableObject currentItem;
+    private bool isCoroutineRunning;
+
 
 
     // 0 = right
@@ -31,6 +39,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animationManager = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        swingableSR = swingable.GetComponent<SpriteRenderer>();
+
+        Transform swingableTransform = transform.Find("SwingableRotation");
+        if(swingableTransform != null) {
+            Transform actualSwingalbeTransform = swingableTransform.Find("SwingableItem");
+            if (actualSwingalbeTransform != null) {
+                swingableSR = actualSwingalbeTransform.GetComponent<SpriteRenderer>();
+            }
+        }
     }
 
     private void FixedUpdate() {
@@ -75,6 +92,10 @@ public class PlayerController : MonoBehaviour
 
             }
         } 
+        if (swingableSR.sprite != currentItem.item_sprite) {
+            swingableSR.sprite = currentItem.item_sprite;
+        }
+        
     }
 
     private bool TryMove(Vector2 direction) {
@@ -94,59 +115,74 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire(){
-        if(!IsPointerOverUI()) {
-            animationManager.SetTrigger("player_attack");
-            canMove = false;
-            LockMovement();
-            //need to implement swinging whatever item the player is holding (if its swingable)
-
-            //First lets try getting the item sprite..
-            //heldItem = playerInventory.playerInventory[playerInventory.selectedItem];
-            //heldItemSprite.SpriteRenderer = playerInventory.selectedItemGameobject;
-
-            //playerInventory[index].GetComponent<ItemPickable>().itemScriptableObject.item_sprite
-
+        if(!IsPointerOverUI() && currentItem.swingable == true && isCoroutineRunning == false) {
+            StartCoroutine(Swing());
         }
         
     }
 
-    public void SwordAttack() {
-        LockMovement();
-        AudioManager.instance.Play("swordslash");
-        switch(direction) {
-            case 0:
-                swordAttack.AttackRight();
-                break;
-            case 1:
-                swordAttack.AttackLeft();
-                break;
-            case 2:
-                swordAttack.AttackDown();
-                break;
-            case 3:
-                swordAttack.AttackUp();
-                break;
+    private IEnumerator Swing() {
+        isCoroutineRunning = true;
+        AudioManager.instance.PlayAtPosition("swordslash", transform.position, .5f, false);
+        // Calculate the initial angle to point at the cursor
+        Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg;
 
+        swingable.SetActive(true);
+        // Set the sword active and initial rotation
+        Quaternion initialRotation;
+        Quaternion targetRotation;
+        if(mousePos.x < transform.position.x) {
+        //if(spriteRenderer.flipX == true) {
+            
+            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle-135); // Start 45 degrees clockwise
+
+            // Calculate the target rotation (90 degrees counterclockwise)
+            initialRotation = swingable.transform.localRotation;
+            targetRotation = Quaternion.Euler(0, 0, angle); // End 45 degrees counterclockwise
+        } else {
+            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle+45); // Start 45 degrees clockwise
+
+            // Calculate the target rotation (90 degrees counterclockwise)
+            initialRotation = swingable.transform.localRotation;
+            //print(angle - 45f);
+            targetRotation = Quaternion.Euler(0, 0, angle - 90); // End 45 degrees counterclockwise
         }
-       
-    }
+        
 
-    public void StopAttack() {
-        UnlockMovement();
-        swordAttack.StopAttack();
-    }
+        // Rotate the sword over time
+        float elapsedTime = 0f;
+        while (elapsedTime < currentItem.swingSpeed)
+        {
+            float t = elapsedTime / currentItem.swingSpeed;
+            t = Mathf.SmoothStep(0, 1, t);
+            swingable.transform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        swingable.transform.localRotation = targetRotation; // Ensure final rotation is set
 
-    public void LockMovement() {
-        canMove = false;
-        print("Movement Locked!");
-    }
-
-    public void UnlockMovement(){
-        canMove = true;
-        print("Movement Unlocked!");
+        // Deactivate the sword
+        isCoroutineRunning = false;
+        swingable.SetActive(false);
     }
 
     private bool IsPointerOverUI() {
         return EventSystem.current.IsPointerOverGameObject();
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Enemy") {
+            EnemyScript enemy = other.GetComponent<EnemyScript>();
+                if (enemy != null) {
+                    enemy.Health -= currentItem.damage;
+                }
+        } 
+        else if (other.tag == "Destructable") {
+            Debug.Log("Tree hit inside TRIGGER!");
+            DestructableScript des = other.GetComponent<DestructableScript>();
+            des.TakeDamage(currentItem.damage);
+        }
     }
 }

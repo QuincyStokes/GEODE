@@ -11,6 +11,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     [Header("UI")]
     public Image image;
+    public SpriteRenderer sr;
     public TMP_Text countText;
 
     [HideInInspector] public ItemScriptableObject item;
@@ -34,7 +35,6 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
 
     public void OnBeginDrag(PointerEventData eventData) {
-        print("Begin Drag");
         parentAfterDrag = transform.parent;
         transform.SetParent(transform.root);
         transform.SetAsLastSibling();
@@ -43,12 +43,10 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     } 
 
     public void OnDrag(PointerEventData eventData) {
-        print("Dragging");
         transform.position = Input.mousePosition;
     }
 
     public void OnEndDrag(PointerEventData eventData) {
-        print("End drag");
         transform.SetParent(parentAfterDrag);
         image.raycastTarget = true;
         countText.raycastTarget = true;

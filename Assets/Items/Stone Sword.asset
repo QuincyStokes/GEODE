@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b713ea4df21198449d51715727f7e5b, type: 3}
-  m_Name: Sword
+  m_Name: Stone Sword
   m_EditorClassIdentifier: 
-  cooldown: 1
+  cooldown: 0
   item_type: 1
   action_type: 1
   tile: {fileID: 0}
   range: {x: 5, y: 5}
-  pickupCooldown: 5
+  pickupCooldown: 0
   lastTimeDropped: 0
   swingable: 1
-  damage: 15
-  swingSpeed: 0.3
+  damage: 5
+  swingSpeed: 0.2
   stackable: 0
-  item_sprite: {fileID: -4467485984841259129, guid: 224b059d6a09f9742ba78a1a194a538a, type: 3}
+  item_sprite: {fileID: -5725524592480584992, guid: 72afcd9bb0b79564db4a3cd7fd132909, type: 3}

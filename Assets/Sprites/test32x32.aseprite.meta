@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: af399c364c4fcb74f94a00646e49a415
+guid: 5a06ba8c3a10beb48ac25164ba0315d2
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638554389803456752
+  platformSettingsDirtyTick: 638554393807779821
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,10 +121,10 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: DesertTile2
+  - name: test32x32
     originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 32
       height: 32
-    spriteID: a09a03222a59afa48b7fbff6d366561c
+    spriteID: 291fc59ccdac4434a8b5afcf2c3e31fd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,20 +144,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -2123977409
-    name: DesertTile2
+    guid: 1729017364
+    name: test32x32
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: DesertTile2
+    - name: test32x32
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 32
         height: 32
-      spriteId: a09a03222a59afa48b7fbff6d366561c
+      spriteId: 291fc59ccdac4434a8b5afcf2c3e31fd
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -165,7 +165,7 @@ ScriptedImporter:
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
-    resizeAlgorithm: 0
+    resizeAlgorithm: 1
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
