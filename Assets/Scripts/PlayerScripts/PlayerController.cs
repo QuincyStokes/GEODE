@@ -92,9 +92,13 @@ public class PlayerController : MonoBehaviour
 
             }
         } 
-        if (swingableSR.sprite != currentItem.item_sprite) {
-            swingableSR.sprite = currentItem.item_sprite;
+        if(swingableSR && currentItem) {
+            if (swingableSR.sprite != currentItem.item_sprite) {
+                swingableSR.sprite = currentItem.item_sprite;
+                print("Changing item to " + currentItem.item_type);
+            }
         }
+       
         
     }
 
@@ -115,10 +119,11 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnFire(){
-        if(!IsPointerOverUI() && currentItem.swingable == true && isCoroutineRunning == false) {
-            StartCoroutine(Swing());
-        }
-        
+        if(currentItem) {
+            if(!IsPointerOverUI() && currentItem.swingable == true && isCoroutineRunning == false) {
+                StartCoroutine(Swing());
+            }
+        }           
     }
 
     private IEnumerator Swing() {
@@ -126,29 +131,31 @@ public class PlayerController : MonoBehaviour
         AudioManager.instance.PlayAtPosition("swordslash", transform.position, .5f, false);
         // Calculate the initial angle to point at the cursor
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg;
 
+        //direction that the pointer is at? could be wrong
+                                //arctan(distance from the pointer to the player) * Rad2Deg (this just changes from radian to degree)
+                                //whole thing gives the angle from flat to where the mouse is from
+        float angle = Mathf.Atan2(mousePos.y - transform.position.y, mousePos.x - transform.position.x) * Mathf.Rad2Deg;
+        //Vector3 relative = transform.InverseTransformPoint(mousePos);
+        //float angle = Mathf.Atan2(relative.x, relative.y) * Mathf.Rad2Deg;
+        //float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        
         swingable.SetActive(true);
         // Set the sword active and initial rotation
         Quaternion initialRotation;
         Quaternion targetRotation;
         if(mousePos.x < transform.position.x) {
         //if(spriteRenderer.flipX == true) {
-            
-            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle-135); // Start 45 degrees clockwise
-
-            // Calculate the target rotation (90 degrees counterclockwise)
+                                                                    //subtract by the whole angle we want
+            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle-currentItem.swingRadius); // Start 45 degrees clockwise
             initialRotation = swingable.transform.localRotation;
-            targetRotation = Quaternion.Euler(0, 0, angle); // End 45 degrees counterclockwise
+            targetRotation = Quaternion.Euler(0, 0, angle);
         } else {
-            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle+45); // Start 45 degrees clockwise
-
-            // Calculate the target rotation (90 degrees counterclockwise)
+            swingable.transform.localRotation = Quaternion.Euler(0, 0, angle+currentItem.swingRadius/3); // Start 45 degrees clockwise
+            
             initialRotation = swingable.transform.localRotation;
-            //print(angle - 45f);
-            targetRotation = Quaternion.Euler(0, 0, angle - 90); // End 45 degrees counterclockwise
+            targetRotation = Quaternion.Euler(0, 0, angle - (currentItem.swingRadius/3) * 2); // End 45 degrees counterclockwise
         }
-        
 
         // Rotate the sword over time
         float elapsedTime = 0f;
@@ -162,6 +169,31 @@ public class PlayerController : MonoBehaviour
         }
         swingable.transform.localRotation = targetRotation; // Ensure final rotation is set
 
+        elapsedTime = 0f;
+
+        while(Input.GetButton("Fire1")) {
+            //swingable.transform.localRotation = targetRotation;
+            
+            //swingable.transform.localRotation = targetRotation; // Ensure final rotation is set
+            elapsedTime = 0f;
+            while (elapsedTime < currentItem.swingSpeed) {
+                float t = elapsedTime / currentItem.swingSpeed;
+                t = Mathf.SmoothStep(0, 1, t);
+                swingable.transform.localRotation = Quaternion.Lerp(targetRotation, initialRotation, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+           
+            elapsedTime = 0f;
+            while (elapsedTime < currentItem.swingSpeed) {
+                float t = elapsedTime / currentItem.swingSpeed;
+                t = Mathf.SmoothStep(0, 1, t);
+                swingable.transform.localRotation = Quaternion.Lerp(initialRotation, targetRotation, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+        }
         // Deactivate the sword
         isCoroutineRunning = false;
         swingable.SetActive(false);
@@ -180,9 +212,13 @@ public class PlayerController : MonoBehaviour
                 }
         } 
         else if (other.tag == "Destructable") {
-            Debug.Log("Tree hit inside TRIGGER!");
+            //"other" is probably the whole tilemap
+            //when we hit it, we need to get the tile at the position of the hit?
+
             DestructableScript des = other.GetComponent<DestructableScript>();
-            des.TakeDamage(currentItem.damage);
+            if(currentItem) {
+                des.TakeDamage(currentItem.damage);
+            }
         }
     }
 }

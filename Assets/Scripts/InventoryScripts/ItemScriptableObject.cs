@@ -17,7 +17,10 @@ public class ItemScriptableObject : ScriptableObject
     public bool swingable;
     public float damage;
 
-    public float swingSpeed = 0f;
+    public float swingSpeed = 1f;
+    public float swingRadius = 90f;
+
+    public GameObject item_prefab;
 
 
     [Header("UI Related")]
@@ -46,12 +49,19 @@ public enum itemType {
     Pickaxe,
     Sword,
     Bow,
-    Placeable
+    Axe,
+    Placeable,
+    Material,
+    Hammer
 };
 
 public enum actionType {
+    NONE,
     Mine,
     MeleeAttack,
-    ProjectileAttack
+    ProjectileAttack,
+    Chop, 
+    Hammer
+
     
 }

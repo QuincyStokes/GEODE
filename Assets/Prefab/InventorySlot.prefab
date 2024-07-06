@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2242571312765501749, guid: 7e4073a18949bf44c8e501bc56ef80ee, type: 3}
+  m_Sprite: {fileID: 1271618668558982111, guid: ce5bf7d6edd625a4cbd0e3dc6c39a0cc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 64, y: 64}
+  m_CellSize: {x: 58, y: 58}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
@@ -114,5 +114,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 1504725095863193132}
-  selectedColor: {r: 0.630785, g: 0.990566, b: 0.6346354, a: 1}
-  notSelectedColor: {r: 0.8867924, g: 0.7957893, b: 0.51450694, a: 1}
+  selectedImage: {fileID: 6836088179820780779, guid: a7286e6867564c1418306e64edd61a3b, type: 3}
+  unselectedImage: {fileID: 1271618668558982111, guid: ce5bf7d6edd625a4cbd0e3dc6c39a0cc, type: 3}

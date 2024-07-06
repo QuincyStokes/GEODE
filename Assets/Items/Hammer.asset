@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b713ea4df21198449d51715727f7e5b, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: 
+  cooldown: 2
+  item_type: 6
+  action_type: 5
+  tile: {fileID: 11400000, guid: b161adfcac62687439926ad4e9ea63ed, type: 2}
+  range: {x: 5, y: 5}
+  pickupCooldown: 5
+  lastTimeDropped: 2.367855
+  swingable: 1
+  damage: 10
+  swingSpeed: 1
+  swingRadius: 90
+  item_prefab: {fileID: 4649643433870168511, guid: 60a7f6b5ab298814a88d40bb748ae98f, type: 3}
+  stackable: 0
+  item_sprite: {fileID: -2988453180880133623, guid: 596c47e534fe2754a8aba4a1bbc5c61d, type: 3}

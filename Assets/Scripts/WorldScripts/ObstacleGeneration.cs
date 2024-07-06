@@ -5,11 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class ObstacleGeneration : MonoBehaviour
 {
-    [SerializeField]
-    private int gridSizeX = 100;
-    [SerializeField]
-
-    private int gridSizeY = 100;
+    [SerializeField] private int gridSizeX = 100;
+    [SerializeField] private int gridSizeY = 100;
     public TileBase[] obstacleTiles;
     public Tilemap tilemap;
     void Start()
@@ -35,15 +32,8 @@ public class ObstacleGeneration : MonoBehaviour
                     if(noiseValue < .15f){
                         Vector3Int cellPosition = new Vector3Int(x, y, 1);
                         int index = Random.Range(0, obstacleTiles.Length);
-                        if(index == 2) {
-                            x += 1;
-                            y += 1;
-                        }
                         tilemap.SetTile(cellPosition, obstacleTiles[index]);
-                        if(index==2) {
-                            x += 1;
-                            y += 1;
-                        }
+                    
                     }
                 } 
                 

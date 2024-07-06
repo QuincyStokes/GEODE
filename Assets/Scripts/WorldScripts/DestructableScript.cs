@@ -19,6 +19,10 @@ public class DestructableScript : MonoBehaviour
     private float shakeAmount = 0.05f;
     private float startingX;
     private float startingY;
+    [SerializeField] private GameObject lootPrefab;
+    [SerializeField] public ItemScriptableObject itemDrop;
+    [SerializeField] public string HitSFX;
+    [SerializeField] public actionType action_type;
 
 
     void Start() {
@@ -41,15 +45,15 @@ public class DestructableScript : MonoBehaviour
     public void TakeDamage(float damage) {
         currentHealth -= damage;
         HealthBar.SetActive(true);
-        //Change the HealthBarGreen's scale to currentHealth/maxHealth%
-        float healthRatio = currentHealth/ maxHealth;
-        HealthBarGreen.transform.localScale = new Vector3(HealthBarGreen.transform.localScale.x *healthRatio, HealthBarGreen.transform.localScale.y, HealthBarGreen.transform.localScale.z);
+        float hitDamagePercent = damage/ maxHealth;
+        //subtract last hit %?
+        HealthBarGreen.transform.localScale = new Vector3(HealthBarGreen.transform.localScale.x - hitDamagePercent, HealthBarGreen.transform.localScale.y, HealthBarGreen.transform.localScale.z);
         //HealthBarGreen.transform.localPosition = new Vector3((healthRatio - 1) * initialHealthBarScale.x / 2, HealthBarGreen.transform.localPosition.y, HealthBarGreen.transform.localPosition.z);
         StopAllCoroutines();
         StartCoroutine(HitColorChange());
-        AudioManager.instance.PlayAtPosition("treehit", transform.position);
+        AudioManager.instance.PlayAtPosition(HitSFX, transform.position);
         if (currentHealth <= 0f) {
-            DestroyTree();
+            DestroyThis();
         }
     }
 
@@ -66,9 +70,14 @@ public class DestructableScript : MonoBehaviour
         transform.position = new Vector3(startingX, startingY, transform.localPosition.z);
     }
 
-    private void DestroyTree() {
+    private void DestroyThis() {
+        GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
+        loot.GetComponent<Loot>().Initialize(itemDrop);
         Destroy(gameObject);
     }
 
+    private void OnColliderEnter2D(Collider2D collider) {
+        //This can come later, need to get damage from the script attatched to the collider2d
+    }
 
 }

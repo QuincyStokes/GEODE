@@ -7,4 +7,7 @@ using UnityEngine;
 public class RuleTileWithData : RuleTile
 {
     public ItemScriptableObject item;
+    public ItemScriptableObject entity;
+    public actionType action_type;
+    public int health;
 }

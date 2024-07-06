@@ -6,18 +6,19 @@ using UnityEngine.UI;
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
     public Image image;
-    public Color selectedColor, notSelectedColor;
+    public Sprite selectedImage, unselectedImage;
 
 
     public void Awake() {
         Deselect();
     }
     public void Select() {
-        image.color = selectedColor;
+        image.sprite = selectedImage;
+
     }
 
     public void Deselect() {
-        image.color = notSelectedColor;
+        image.sprite = unselectedImage;
     }
 
     public void OnDrop(PointerEventData eventData) {

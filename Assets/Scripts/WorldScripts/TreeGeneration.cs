@@ -5,7 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class TreeGeneration : MonoBehaviour
 {
-   
+    [SerializeField] private Grid grid;
+
     private int gridSizeX = GridGenerator.gridSizeX/7; // div by 12
     
 
@@ -42,10 +43,14 @@ public class TreeGeneration : MonoBehaviour
                 //} Lets try something different
                 float randomValue = Random.Range(0,100);
                 if(randomValue > 90) {
-
-                    Vector3Int cellPosition = new Vector3Int(x, y, 0);
+                    //this currently spawns the trees at integer *world* positions
+                    Vector3Int worldPosition = new Vector3Int(x, y, 0);
+                    Vector3Int cellPosition = grid.WorldToCell(worldPosition);
+                    Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
+                    //Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
                     int index = Random.Range(0, desertTrees.Length);
-                    Instantiate(desertTrees[index], cellPosition, Quaternion.identity);
+                    print("Instantiating at cell coordinates " + cellCenter);
+                    Instantiate(desertTrees[index], cellCenter, Quaternion.identity);
                 }                
                 
             }

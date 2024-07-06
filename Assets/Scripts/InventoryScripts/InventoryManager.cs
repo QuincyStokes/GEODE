@@ -41,16 +41,29 @@ public class InventoryManager : MonoBehaviour
                 inventory.SetActive(true);
             } 
         }
+
+        if(Input.mouseScrollDelta.y > 0) {
+            ChangeSelectedSlot(selectedSlot-1);
+        } else if (Input.mouseScrollDelta.y < 0) {
+            ChangeSelectedSlot(selectedSlot+1);
+        }
     }
 
     void ChangeSelectedSlot(int newValue) {
         if(selectedSlot >= 0) {
             inventorySlots[selectedSlot].Deselect();
-
         }
-        
-        inventorySlots[newValue].Select();
-        selectedSlot = newValue;
+        if(newValue > 8) {
+            inventorySlots[0].Select();
+            selectedSlot = 0;
+        } else if (newValue < 0) {
+            inventorySlots[8].Select();
+            selectedSlot = 8;
+        } else {
+            inventorySlots[newValue].Select();
+            selectedSlot = newValue;
+        }
+       
     }
 
     public bool AddItem(ItemScriptableObject item) {
