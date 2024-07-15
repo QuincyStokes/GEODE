@@ -72,13 +72,10 @@ public class BuildingSystem : MonoBehaviour {
             if(InRange(playerPos, mouseGridPos, (Vector3Int)currentItem.range)) { //if we're in range
                 Collider2D collider = Physics2D.OverlapPoint(grid.GetCellCenterWorld(mouseGridPos), layermask);
                
-                print("Checking ConditionGO with ");
-                print(grid.GetCellCenterWorld(mouseGridPos));
                 if(CheckConditionGO(collider, currentItem)) {
                 //if (CheckCondition(buildingTilemap.GetTile<RuleTileWithData>(mouseGridPos), currentItem)){ //if the tile hovered's type matches the item we're holding
                     //if(!tileOccupancyChecker.IsWorldPosOccupied(grid.GetCellCenterWorld(mouseGridPos))){//If the tile is occupied already
                         //In the future, highlightTile should be the preview of whatever we're holding.
-                        print("ITS ALIVEEE");
 
                         highlightTilemap.SetTile(mouseGridPos, highlightTile);
                         highlightedTilePos = mouseGridPos;
@@ -109,9 +106,7 @@ public class BuildingSystem : MonoBehaviour {
             //if we're holding a placeable object, and the tile is null
             //if we're holding a hammer, and the tile in question is of action_type, hammer
             //thats all for now I think..
-        print(currentItem.item_type);
         if(collider == null) {
-            print("NULL COLLIDER");
         }
         if(currentItem.item_type == itemType.Placeable && collider == null) {
             return true;
@@ -158,10 +153,8 @@ public class BuildingSystem : MonoBehaviour {
     }
 
     private void Build(Vector3Int position, ItemScriptableObject itemToBuild) {
-        print("position: " + position);
         Vector3 cellPositionAsWorld = grid.GetCellCenterWorld(position);
         if(!IsPointerOverUI() && !tileOccupancyChecker.IsWorldPosOccupied(cellPositionAsWorld)) {
-            print("cellPosition: "+ grid.WorldToCell(position));
             highlightTilemap.SetTile(position, null); //clear the highlihgt
             highlighted = false;
             
@@ -200,11 +193,19 @@ public class BuildingSystem : MonoBehaviour {
         }
     }
 
-    private void DestroyGameObject(Vector3 position) {
+    private void DestroyGameObject(Vector3Int position) {
         if(!IsPointerOverUI()) {
-            Collider2D collider = Physics2D.OverlapPoint(position, layermask);
-            DestructableScript des = collider.GetComponent<DestructableScript>();
-            des.TakeDamage(des.maxHealth);
+           //this is grid coordinates, not world coordinates
+            Vector3 worldPos = grid.GetCellCenterWorld(position);
+            print(worldPos);
+            Collider2D collider = Physics2D.OverlapPoint(worldPos, layermask);
+            if(collider != null) {
+                DestructableScript des = collider.GetComponent<DestructableScript>();
+                des.TakeDamage(des.maxHealth);
+            } else {
+                print("Cannot Destroy GO, no collider found.");
+            }
+            
         }
     }
 

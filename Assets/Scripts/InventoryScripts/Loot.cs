@@ -8,6 +8,7 @@ public class Loot : MonoBehaviour
     [SerializeField] private BoxCollider2D collider;
     [SerializeField] private float moveSpeed;
 
+    [SerializeField] public List<string> popSFX;
     private ItemScriptableObject item;
 
     public void Initialize(ItemScriptableObject item) {
@@ -26,11 +27,11 @@ public class Loot : MonoBehaviour
 
     private IEnumerator MoveAndCollect(Transform target) {
         Destroy (collider);
-        while(transform.position !=  target.position) {
+        while(transform.position !=  target.position && Vector3.Distance(transform.position, target.position) > .01f) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
             yield return 0;
         }
-        AudioManager.instance.Play("pickuppop", .3f);
+        AudioManager.instance.Play(popSFX[Random.Range(0,popSFX.Count-1)], .3f);
         Destroy(gameObject);
     }
 }

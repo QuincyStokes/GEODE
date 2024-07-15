@@ -15,7 +15,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public TMP_Text countText;
 
     [HideInInspector] public ItemScriptableObject item;
-    [HideInInspector] public int count = 1;
+    public int count = 1;
 
     [HideInInspector] public Transform parentAfterDrag;
 
@@ -24,6 +24,7 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
     public void InitializeItem(ItemScriptableObject newItem) {
         item = newItem;
         image.sprite = newItem.item_sprite;
+        image.preserveAspect = true;
         RefreshCount();
     }
 
@@ -31,6 +32,9 @@ public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         countText.text = count.ToString();
         bool textActive = count > 1;
         countText.gameObject.SetActive(textActive);
+        if(count == 0) {
+           Destroy(gameObject);
+        }
     }
 
 

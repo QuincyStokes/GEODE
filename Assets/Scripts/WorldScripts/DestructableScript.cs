@@ -21,7 +21,7 @@ public class DestructableScript : MonoBehaviour
     private float startingY;
     [SerializeField] private GameObject lootPrefab;
     [SerializeField] public ItemScriptableObject itemDrop;
-    [SerializeField] public string HitSFX;
+    [SerializeField] public List<string> HitSFX;
     [SerializeField] public actionType action_type;
 
 
@@ -51,7 +51,7 @@ public class DestructableScript : MonoBehaviour
         //HealthBarGreen.transform.localPosition = new Vector3((healthRatio - 1) * initialHealthBarScale.x / 2, HealthBarGreen.transform.localPosition.y, HealthBarGreen.transform.localPosition.z);
         StopAllCoroutines();
         StartCoroutine(HitColorChange());
-        AudioManager.instance.PlayAtPosition(HitSFX, transform.position);
+        AudioManager.instance.Play(HitSFX[Random.Range(0,HitSFX.Count)]);
         if (currentHealth <= 0f) {
             DestroyThis();
         }

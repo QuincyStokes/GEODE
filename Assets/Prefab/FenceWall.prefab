@@ -87,7 +87,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!61 &1181314926873638850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -178,7 +178,8 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5389135110836729094}
   lootPrefab: {fileID: 1268131264684521990, guid: 9aa1d6b9353b456419b0f0006c47c008, type: 3}
   itemDrop: {fileID: 11400000, guid: 1afe81e906420724a95f2f2a14a1ee72, type: 2}
-  HitSFX: treehit
+  HitSFX:
+  - treehit1
   action_type: 5
 --- !u!1001 &4212537306708568848
 PrefabInstance:

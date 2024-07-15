@@ -18,11 +18,12 @@ MonoBehaviour:
   tile: {fileID: 11400000, guid: b161adfcac62687439926ad4e9ea63ed, type: 2}
   range: {x: 5, y: 5}
   pickupCooldown: 5
-  lastTimeDropped: 2.367855
+  lastTimeDropped: 0
   swingable: 1
-  damage: 10
+  damage: 1
   swingSpeed: 1
   swingRadius: 90
   item_prefab: {fileID: 4649643433870168511, guid: 60a7f6b5ab298814a88d40bb748ae98f, type: 3}
   stackable: 0
-  item_sprite: {fileID: -2988453180880133623, guid: 596c47e534fe2754a8aba4a1bbc5c61d, type: 3}
+  description: 
+  item_sprite: {fileID: -6461656964645156951, guid: 1b229b978eb4ee947982b9baa934e3b5, type: 3}

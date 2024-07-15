@@ -1,0 +1,29 @@
+{
+    "SlimeAgent": {
+        "checkpoints": [
+            {
+                "steps": 12278,
+                "file_path": "results\\BrandNewTest\\SlimeAgent\\SlimeAgent-12278.onnx",
+                "reward": -0.7142857142857143,
+                "creation_time": 1720737610.8541043,
+                "auxillary_file_paths": [
+                    "results\\BrandNewTest\\SlimeAgent\\SlimeAgent-12278.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 12278,
+            "file_path": "results\\BrandNewTest\\SlimeAgent.onnx",
+            "reward": -0.7142857142857143,
+            "creation_time": 1720737610.8541043,
+            "auxillary_file_paths": [
+                "results\\BrandNewTest\\SlimeAgent\\SlimeAgent-12278.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.30.0",
+        "torch_version": "2.2.2+cu121"
+    }
+}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : MonoBehaviour, IItemContainer
 {
 
     public static InventoryManager instance;
@@ -13,6 +13,7 @@ public class InventoryManager : MonoBehaviour
     public InventorySlot[] inventorySlots;
     public GameObject inventoryItemPrefab;
     public GameObject inventory;
+    public GameObject craftingMenu;
 
     int selectedSlot = -1; //default -1 because nothing selected
 
@@ -37,8 +38,12 @@ public class InventoryManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) {
             if(inventory.activeSelf == true) {
                 inventory.SetActive(false);
+                craftingMenu.SetActive(false);
+                AudioManager.instance.Play("inventoryclose");
             }  else {
                 inventory.SetActive(true);
+                craftingMenu.SetActive(true);
+                AudioManager.instance.Play("inventoryopen");
             } 
         }
 
@@ -74,6 +79,7 @@ public class InventoryManager : MonoBehaviour
             InventorySlot slot = inventorySlots[i];
             InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
             if (itemInSlot != null && itemInSlot.item == item && itemInSlot.count < maxStackedItems && itemInSlot.item.stackable) {
+                print("In AddItem");
                 itemInSlot.count++;
                 itemInSlot.RefreshCount();
                 return true;
@@ -85,7 +91,10 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < inventorySlots.Length; i++) {
             //current inventory slot -> get the component called "InventoryItem" of its CHILD
             //if its null, that means there is no item in this slot.
+            print("Creating ao");
+
             if (inventorySlots[i].GetComponentInChildren<InventoryItem>() == null) {
+                print("Creating item");
                 CreateItem(item, inventorySlots[i]);
                 return true;
             }
@@ -103,6 +112,8 @@ public class InventoryManager : MonoBehaviour
         inventoryItem.InitializeItem(item);
     }
 
+    //This function returns a selected item.
+    //If it's meant to be used, it subtracts one from its count
     public ItemScriptableObject GetSelectedItem(bool use) {
         InventorySlot slot = inventorySlots[selectedSlot];
         InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
@@ -119,5 +130,54 @@ public class InventoryManager : MonoBehaviour
             return item;
         } 
         return null;
+    }
+
+    public bool RemoveItem(ItemScriptableObject item, int count) {
+        for(int i =0; i < inventorySlots.Length; ++i) {
+            if (inventorySlots[i].transform.childCount != 0) { //does the slot have items in it
+                if(inventorySlots[i].GetComponentInChildren<InventoryItem>().item == item 
+                && inventorySlots[i].GetComponentInChildren<InventoryItem>().count >= count) {
+                    print("inside REmoveItem");
+                    inventorySlots[i].GetComponentInChildren<InventoryItem>().count -= count;
+                    print(count);
+                    inventorySlots[i].GetComponentInChildren<InventoryItem>().RefreshCount();
+
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool ContainsItem(ItemScriptableObject item) {
+        for(int i =0; i < inventorySlots.Length; ++i) {
+            if (inventorySlots[i].transform.childCount != 0) {
+                if(inventorySlots[i].GetComponentInChildren<InventoryItem>().item == item) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool IsFull() {
+        for(int i =0; i < inventorySlots.Length; ++i) {
+            if(inventorySlots[i].GetComponentInChildren<InventoryItem>().count == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public int ItemCount(ItemScriptableObject item) {
+        int count = 0;
+        for(int i =0; i < inventorySlots.Length; ++i) {
+            if (inventorySlots[i].transform.childCount != 0) {
+                if(inventorySlots[i].GetComponentInChildren<InventoryItem>().item == item) {
+                    count+=inventorySlots[i].GetComponentInChildren<InventoryItem>().count;
+                }
+            }
+        }
+        return count;
     }
 }

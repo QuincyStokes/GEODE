@@ -84,6 +84,11 @@ MonoBehaviour:
   sr: {fileID: 2017174356561165461}
   collider: {fileID: 4965530262383604648}
   moveSpeed: 4
+  popSFX:
+  - popsound1
+  - popsound2
+  - popsound3
+  - popsound4
 --- !u!1 &4816302610127646164
 GameObject:
   m_ObjectHideFlags: 0

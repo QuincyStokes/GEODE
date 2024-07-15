@@ -333,8 +333,8 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1000
-  Player: {fileID: 0}
-  forceMultiplier: 3
+  Player: {fileID: 3478417356143214950, guid: 807ecdcd9a08f4c46bebba49c27f33bf, type: 3}
+  forceMultiplier: 0.5
 --- !u!114 &9106544823592890325
 MonoBehaviour:
   m_ObjectHideFlags: 0

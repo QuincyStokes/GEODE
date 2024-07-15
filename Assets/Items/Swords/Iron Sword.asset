@@ -18,10 +18,12 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 5
-  lastTimeDropped: 58.263485
+  lastTimeDropped: 145.69444
   swingable: 1
   damage: 15
   swingSpeed: 0.25
   swingRadius: 100
+  item_prefab: {fileID: 0}
   stackable: 0
+  description: '"Swing swing swing swing."'
   item_sprite: {fileID: -6904335191818184075, guid: c390bed9ebe7e534fbe4041d66014e80, type: 3}

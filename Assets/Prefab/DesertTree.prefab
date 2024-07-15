@@ -720,7 +720,9 @@ MonoBehaviour:
   spriteRenderer: {fileID: 783216656058903251}
   lootPrefab: {fileID: 1268131264684521990, guid: 9aa1d6b9353b456419b0f0006c47c008, type: 3}
   itemDrop: {fileID: 11400000, guid: 4bea22c60671332418dbf415df0d25b1, type: 2}
-  HitSFX: treehit
+  HitSFX:
+  - treehit1
+  - treehit2
   action_type: 4
 --- !u!1001 &6997557196948459849
 PrefabInstance:

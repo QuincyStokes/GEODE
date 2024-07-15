@@ -25,6 +25,7 @@ public class ItemScriptableObject : ScriptableObject
 
     [Header("UI Related")]
     public bool stackable = true;
+    public string description;
 
 
     [Header("UI + Gameplay Related")]

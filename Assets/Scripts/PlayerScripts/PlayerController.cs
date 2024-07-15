@@ -128,7 +128,7 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Swing() {
         isCoroutineRunning = true;
-        AudioManager.instance.PlayAtPosition("swordslash", transform.position, .5f, false);
+        AudioManager.instance.Play("swordslash", .5f, false);
         // Calculate the initial angle to point at the cursor
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
 
@@ -205,12 +205,15 @@ public class PlayerController : MonoBehaviour
 
 
     private void OnTriggerEnter2D(Collider2D other) {
+        /*
         if(other.tag == "Enemy") {
             EnemyScript enemy = other.GetComponent<EnemyScript>();
                 if (enemy != null) {
                     enemy.Health -= currentItem.damage;
                 }
         } 
+        */
+        /* dont think we need this anymore.
         else if (other.tag == "Destructable") {
             //"other" is probably the whole tilemap
             //when we hit it, we need to get the tile at the position of the hit?
@@ -219,6 +222,6 @@ public class PlayerController : MonoBehaviour
             if(currentItem) {
                 des.TakeDamage(currentItem.damage);
             }
-        }
+        }*/
     }
 }
