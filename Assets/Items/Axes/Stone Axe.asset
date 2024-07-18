@@ -26,4 +26,4 @@ MonoBehaviour:
   item_prefab: {fileID: 0}
   stackable: 0
   description: '"A some-what trusty Stone Axe. Used to chop trees,"'
-  item_sprite: {fileID: -6511343104588285750, guid: 1902b66b165d0b540a0e1c7500252a1a, type: 3}
+  item_sprite: {fileID: -255942125390731690, guid: 1902b66b165d0b540a0e1c7500252a1a, type: 3}
