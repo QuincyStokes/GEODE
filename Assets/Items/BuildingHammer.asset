@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b713ea4df21198449d51715727f7e5b, type: 3}
-  m_Name: Hammer
+  m_Name: BuildingHammer
   m_EditorClassIdentifier: 
   cooldown: 2
   item_type: 6
@@ -18,7 +18,7 @@ MonoBehaviour:
   tile: {fileID: 11400000, guid: b161adfcac62687439926ad4e9ea63ed, type: 2}
   range: {x: 5, y: 5}
   pickupCooldown: 5
-  lastTimeDropped: 0
+  lastTimeDropped: 19.585773
   swingable: 1
   damage: 1
   swingSpeed: 1
@@ -26,4 +26,4 @@ MonoBehaviour:
   item_prefab: {fileID: 4649643433870168511, guid: 60a7f6b5ab298814a88d40bb748ae98f, type: 3}
   stackable: 0
   description: 
-  item_sprite: {fileID: -6461656964645156951, guid: 1b229b978eb4ee947982b9baa934e3b5, type: 3}
+  item_sprite: {fileID: -2618717813806487088, guid: 0c5e51df821a9a941aa5344a25cd02c1, type: 3}
