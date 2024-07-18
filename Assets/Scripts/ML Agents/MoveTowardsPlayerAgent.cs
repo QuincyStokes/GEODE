@@ -12,25 +12,26 @@ public class MoveTowardsPlayerAgent : Agent
     private Rigidbody2D rBody;
     [SerializeField] private Color winColor;
     [SerializeField] private Color loseColor;
+    /*
     [SerializeField] private SpriteRenderer wall1;
     [SerializeField] private SpriteRenderer wall2;
     [SerializeField] private SpriteRenderer wall3;
     [SerializeField] private SpriteRenderer wall4;
-
+        */
     public override void Initialize() {
         rBody = GetComponent<Rigidbody2D>();
     }
 
     public GameObject Player;
     public override void OnEpisodeBegin() {
-        transform.localPosition = new Vector3(Random.Range(-1.5f,0.1f), Random.Range(-0.7f, 0.5f), 0 );
-        Player.transform.localPosition = new Vector3(Random.Range(-1.5f,0.1f), Random.Range(-0.7f, 0.5f), 0 );
+        //transform.localPosition = new Vector3(Random.Range(-1.5f,2f), Random.Range(-0.25f, 0.5f), 0 );
+        //Player.transform.localPosition = new Vector3(Random.Range(-0.5f,1f), Random.Range(-0.55f, -1.5f), 0 );
     }
 
     public override void CollectObservations(VectorSensor sensor) {
 
         // Target and Agent positions
-        //sensor.AddObservation(Player.transform.localPosition);
+        sensor.AddObservation(Player.transform.localPosition);
         sensor.AddObservation(this.transform.localPosition);
 
         // Agent velocity
@@ -61,6 +62,7 @@ public class MoveTowardsPlayerAgent : Agent
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent<PlayerController>(out PlayerController playerController)){
+            /*
             wall1.color = winColor;
             wall2.color = winColor;
             wall3.color = winColor;
@@ -75,6 +77,8 @@ public class MoveTowardsPlayerAgent : Agent
             wall4.color = loseColor;
             SetReward(-1f);
             EndEpisode();
+        }
+        */
         }
        
     }
