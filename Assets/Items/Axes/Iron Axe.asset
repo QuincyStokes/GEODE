@@ -18,12 +18,12 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 0
-  lastTimeDropped: 19.107288
+  lastTimeDropped: 10.629697
   swingable: 1
-  damage: 5
-  swingSpeed: 1
+  damage: 8
+  swingSpeed: 0.5
   swingRadius: 90
   item_prefab: {fileID: 0}
   stackable: 0
   description: '"An Iron Axe, newer and slicker than ever."'
-  item_sprite: {fileID: 817656071501386582, guid: f4a672cf3d7b3af4e8e1e78597d7af30, type: 3}
+  item_sprite: {fileID: -7208325785981387588, guid: f4a672cf3d7b3af4e8e1e78597d7af30, type: 3}
