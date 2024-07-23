@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
         swingable.transform.localRotation = targetRotation; // Ensure final rotation is set
 
         elapsedTime = 0f;
-
+        /* this allows the player to hold down left click and it swings back and forth, but it felt kinda clunky
         while(Input.GetButton("Fire1")) {
             //swingable.transform.localRotation = targetRotation;
             
@@ -192,8 +192,8 @@ public class PlayerController : MonoBehaviour
                 elapsedTime += Time.deltaTime;
                 yield return null;
             }
-
-        }
+            */
+        
         // Deactivate the sword
         isCoroutineRunning = false;
         swingable.SetActive(false);
