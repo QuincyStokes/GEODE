@@ -25,7 +25,9 @@ public class CraftingSlot : MonoBehaviour
 
     void Initialize() {
         image.sprite = craftingRecipe.Results[0].Item.item_sprite;
+        image.preserveAspect = true;
         amountText.text = craftingRecipe.Results[0].Amount.ToString();
+        resultSlot.transform.GetChild(0).GetComponent<Image>().preserveAspect = true;
     }
 
     public void OnSlotClicked() {

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8fd22a83cd94f34394a1635a4f9f9a5
+guid: 5be49e1a82658c644951dfce56d07b5c
 SpriteAtlasImporter:
   externalObjects: {}
   textureSettings:
@@ -8,7 +8,7 @@ SpriteAtlasImporter:
     compressionQuality: 50
     maxTextureSize: 2048
     textureCompression: 0
-    filterMode: 0
+    filterMode: 1
     generateMipMaps: 0
     readable: 0
     crunchedCompression: 0

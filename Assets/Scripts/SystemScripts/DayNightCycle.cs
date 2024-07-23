@@ -6,12 +6,12 @@ using TMPro;
 public class DayNightCycle : MonoBehaviour
 {
     
-    public Light2D sunlight;
-    public TMP_Text currentTimeText;
+    private Light2D sunlight;
     //24 hours
     //Day lasts 16, night lasts 8?
     //Day = 24 minutes, night lasts 12?
     [Header ("Day/Night Cycle Settings")]
+    public float startTimeInSeconds;
     public float dayLengthInMinutes;
     public float nightLengthInMinutes;
 
@@ -34,7 +34,7 @@ public class DayNightCycle : MonoBehaviour
         totalDayTimeInSeconds = dayLengthInSeconds + nightLengthInSeconds;
         isDayTime = true;
         //currentTime = totalDayTimeInMinutesInSeconds / 4; //This should set time to "6am"
-        currentTime = 0f;
+        currentTime = startTimeInSeconds;
         dayState = "day";
         timeSuffix = "AM";
     }

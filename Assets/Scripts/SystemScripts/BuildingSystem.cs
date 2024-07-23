@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class BuildingSystem : MonoBehaviour {
 
     [SerializeField] private TileBase highlightTile;
-    [SerializeField] private Tilemap buildingTilemap; //this will be our Building tilemap
+    //[SerializeField] private Tilemap buildingTilemap; //this will be our Building tilemap
     [SerializeField] private Tilemap highlightTilemap;
     [SerializeField] private Tilemap objectTilemap;
     [SerializeField] private TileOccupancyChecker tileOccupancyChecker;
@@ -27,7 +27,7 @@ public class BuildingSystem : MonoBehaviour {
 
         ItemScriptableObject item = InventoryManager.instance.GetSelectedItem(false);
         PlayerController.currentItem = item;
-        playerPos = buildingTilemap.WorldToCell(transform.position);
+        playerPos = highlightTilemap.WorldToCell(transform.position);
         //if we're holding something, anything, try to highlight it
         if (item != null)
         {
@@ -176,20 +176,6 @@ public class BuildingSystem : MonoBehaviour {
                     print("Instantiating at cell coordinates " + cellCenter);
                     Instantiate(desertTrees[index], cellCenter, Quaternion.identity);
 */
-        }
-    }
-
-    private void DestroyTile(Vector3Int position) {
-        if(!IsPointerOverUI()) {
-            highlightTilemap.SetTile(position, null); //clear the highlihgt
-            highlighted = false;
-
-            RuleTileWithData tile = buildingTilemap.GetTile<RuleTileWithData>(position);
-            buildingTilemap.SetTile(position, null); //clear the actual tile
-
-            Vector3 pos = buildingTilemap.GetCellCenterWorld(position);
-            GameObject loot = Instantiate(lootPrefab, pos, Quaternion.identity);
-            loot.GetComponent<Loot>().Initialize(tile.entity);
         }
     }
 
