@@ -18,7 +18,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 3, y: 3}
   pickupCooldown: 5
-  lastTimeDropped: 0
+  lastTimeDropped: 2.1556003
   swingable: 1
   damage: 3
   swingSpeed: 0.3
@@ -26,4 +26,5 @@ MonoBehaviour:
   item_prefab: {fileID: 0}
   stackable: 0
   description: '"Because every game starts with a stone pickaxe."'
+  item_name: Stone Pickaxe
   item_sprite: {fileID: 7598363587982998185, guid: add35d7588b528e4d957f4131a53ed79, type: 3}
