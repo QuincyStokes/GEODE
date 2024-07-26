@@ -6,6 +6,7 @@ public class CraftingMenu : MonoBehaviour
 {
     public List<GameObject> contentMenus;
     public List<GameObject> craftingTabs;
+    public List<GameObject> craftingTabBlends;
     [SerializeField] private Sprite deactivatedImage;
     [SerializeField] private Sprite activatedImage;
     public void ChangeCraftingTab(int num) {
@@ -13,11 +14,13 @@ public class CraftingMenu : MonoBehaviour
         for(int i = 0; i < contentMenus.Count; ++i) {
             contentMenus[i].SetActive(false);
             craftingTabs[i].GetComponent<Image>().sprite = deactivatedImage;
-            craftingTabs[i].transform.localScale = new Vector3(.75f, .75f, 1f);
+            craftingTabBlends[i].SetActive(false);
+            
         }
         contentMenus[num].SetActive(true);
+        craftingTabBlends[num].SetActive(true);
         craftingTabs[num].GetComponent<Image>().sprite = activatedImage;
-        craftingTabs[num].transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+        
 
 
        
