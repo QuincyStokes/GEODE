@@ -18,7 +18,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 3, y: 3}
   pickupCooldown: 0
-  lastTimeDropped: 2.0756693
+  lastTimeDropped: 2.1556003
   swingable: 1
   damage: 5
   swingSpeed: 0.5
@@ -26,4 +26,5 @@ MonoBehaviour:
   item_prefab: {fileID: 0}
   stackable: 0
   description: '"A some-what trusty Stone Axe. Used to chop trees,"'
+  item_name: Stone Axe
   item_sprite: {fileID: -255942125390731690, guid: 1902b66b165d0b540a0e1c7500252a1a, type: 3}
