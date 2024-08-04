@@ -14,11 +14,17 @@ public class SwingableScript : MonoBehaviour
         else if (other.tag == "Destructable") {
             //"other" is probably the whole tilemap
             //when we hit it, we need to get the tile at the position of the hit?
-
+            
             DestructableScript des = other.GetComponent<DestructableScript>();
-            if(PlayerController.currentItem) {
-                des.TakeDamage(PlayerController.currentItem.damage);
+            if(des.hittableByPlayer){
+                //if the players current item's type matches the destructable script's type
+                if(PlayerController.currentItem.action_type == des.action_type) {
+                    des.TakeDamage(PlayerController.currentItem.damage);
+                } else if (PlayerController.currentItem) {
+                    des.TakeDamage(PlayerController.currentItem.damage * .2f);
+                }   
             }
+            
         }
     }
 }

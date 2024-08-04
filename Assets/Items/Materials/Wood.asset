@@ -18,7 +18,7 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 0
-  lastTimeDropped: 145.69444
+  lastTimeDropped: 2.1556003
   swingable: 0
   damage: 0
   swingSpeed: 0
@@ -26,4 +26,5 @@ MonoBehaviour:
   item_prefab: {fileID: 0}
   stackable: 1
   description: '"It''s the wood that makes it good."'
+  item_name: Wood
   item_sprite: {fileID: 1242115310756096658, guid: 54edb61e158ae6741a4c417405604f37, type: 3}

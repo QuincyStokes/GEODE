@@ -20,6 +20,7 @@ public class DestructableScript : MonoBehaviour
     private float startingX;
     private float startingY;
     [SerializeField] private GameObject lootPrefab;
+    [SerializeField] public bool hittableByPlayer;
     [SerializeField] public ItemScriptableObject itemDrop;
     [SerializeField] public List<string> HitSFX;
     [SerializeField] public actionType action_type;
@@ -71,8 +72,12 @@ public class DestructableScript : MonoBehaviour
     }
 
     private void DestroyThis() {
-        GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
-        loot.GetComponent<Loot>().Initialize(itemDrop);
+        int numDrops = Random.Range(3,5);
+        for(int i = 0; i < numDrops; ++i) {
+            GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
+            loot.GetComponent<Loot>().Initialize(itemDrop);
+        }
+       
         Destroy(gameObject);
     }
 

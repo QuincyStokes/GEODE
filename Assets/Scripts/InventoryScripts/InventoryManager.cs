@@ -91,8 +91,6 @@ public class InventoryManager : MonoBehaviour, IItemContainer
         for (int i = 0; i < inventorySlots.Length; i++) {
             //current inventory slot -> get the component called "InventoryItem" of its CHILD
             //if its null, that means there is no item in this slot.
-            print("Creating ao");
-
             if (inventorySlots[i].GetComponentInChildren<InventoryItem>() == null) {
                 print("Creating item");
                 CreateItem(item, inventorySlots[i]);

@@ -51,7 +51,6 @@ public class TreeGeneration : MonoBehaviour
                     Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
                     //Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
                     int index = Random.Range(0, desertTrees.Length);
-                    print("Instantiating at cell coordinates " + cellCenter);
                     Instantiate(desertTrees[index], cellCenter, Quaternion.identity);
                 }                
                 
