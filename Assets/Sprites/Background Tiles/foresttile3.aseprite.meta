@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7471a3df5dc0db34e98b9c6e046b65f0
+guid: 0267b048c777da949af04a5072389b1d
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -32,7 +32,7 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 1
+    spriteMeshType: 0
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
     spritePixelsToUnits: 100
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638571301924074826
+  platformSettingsDirtyTick: 638568586317234256
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 64
       height: 64
-    spriteID: 2ce9c6701eb86ad4d9ec93b0ca70f230
+    spriteID: 3916935200d7a774b8fb0b44ee10442e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,7 +158,7 @@ ScriptedImporter:
         y: 0
         width: 64
         height: 64
-      spriteId: 2ce9c6701eb86ad4d9ec93b0ca70f230
+      spriteId: 3916935200d7a774b8fb0b44ee10442e
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -198,7 +198,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  generatePhysicsShape: 0
+  generatePhysicsShape: 1
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 64, y: 64}

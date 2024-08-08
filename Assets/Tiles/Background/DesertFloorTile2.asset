@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e6f3fbb560bd6041a202ea918fa4f23, type: 3}
   m_Name: DesertFloorTile2
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 7364497718067645516, guid: af399c364c4fcb74f94a00646e49a415, type: 3}
+  m_DefaultSprite: {fileID: 7796494075487699288, guid: 49670d7aecec295429e9991be6617b54, type: 3}
   m_DefaultGameObject: {fileID: 0}
   m_DefaultColliderType: 1
   m_TilingRules: []
