@@ -18,9 +18,9 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 3, y: 3}
   pickupCooldown: 5
-  lastTimeDropped: 2.1556003
+  lastTimeDropped: 5.9143467
   swingable: 1
-  damage: 3
+  damage: 10
   swingSpeed: 0.3
   swingRadius: 75
   item_prefab: {fileID: 0}

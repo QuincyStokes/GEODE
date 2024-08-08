@@ -18,12 +18,13 @@ MonoBehaviour:
   tile: {fileID: 11400000, guid: b161adfcac62687439926ad4e9ea63ed, type: 2}
   range: {x: 5, y: 5}
   pickupCooldown: 5
-  lastTimeDropped: 19.585773
+  lastTimeDropped: 0.57272756
   swingable: 1
   damage: 1
-  swingSpeed: 1
+  swingSpeed: 0.8
   swingRadius: 90
   item_prefab: {fileID: 4649643433870168511, guid: 60a7f6b5ab298814a88d40bb748ae98f, type: 3}
   stackable: 0
-  description: 
+  description: '"Hammer? Hardly know''er."'
+  item_name: Building Hammer
   item_sprite: {fileID: -2618717813806487088, guid: 0c5e51df821a9a941aa5344a25cd02c1, type: 3}

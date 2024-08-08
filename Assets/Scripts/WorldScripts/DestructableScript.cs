@@ -52,7 +52,9 @@ public class DestructableScript : MonoBehaviour
         //HealthBarGreen.transform.localPosition = new Vector3((healthRatio - 1) * initialHealthBarScale.x / 2, HealthBarGreen.transform.localPosition.y, HealthBarGreen.transform.localPosition.z);
         StopAllCoroutines();
         StartCoroutine(HitColorChange());
-        AudioManager.instance.Play(HitSFX[Random.Range(0,HitSFX.Count)]);
+        if(HitSFX.Count > 0) {
+            AudioManager.instance.Play(HitSFX[Random.Range(0,HitSFX.Count)]);
+        }
         if (currentHealth <= 0f) {
             DestroyThis();
         }
@@ -73,10 +75,16 @@ public class DestructableScript : MonoBehaviour
 
     private void DestroyThis() {
         int numDrops = Random.Range(3,5);
-        for(int i = 0; i < numDrops; ++i) {
+        if(action_type != actionType.Hammer) {
+            for(int i = 0; i < numDrops; ++i) {
+                GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
+                loot.GetComponent<Loot>().Initialize(itemDrop);
+            }
+        } else {
             GameObject loot = Instantiate(lootPrefab, transform.position, Quaternion.identity);
             loot.GetComponent<Loot>().Initialize(itemDrop);
         }
+        
        
         Destroy(gameObject);
     }

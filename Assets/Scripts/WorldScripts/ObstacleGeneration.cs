@@ -34,7 +34,7 @@ public class ObstacleGeneration : MonoBehaviour
                         int index = Random.Range(0, obstacleTiles.Length);
                         tilemap.SetTile(cellPosition, obstacleTiles[index]);
                     
-                    }
+                    } 
                 } 
                 
             }

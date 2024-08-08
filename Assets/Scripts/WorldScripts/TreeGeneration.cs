@@ -12,6 +12,7 @@ public class TreeGeneration : MonoBehaviour
 
     private int gridSizeY = GridGenerator.gridSizeY/7;
     public GameObject[] desertTrees;
+    public GameObject mossyRock;
     void Start()
     {
         GenerateTrees();
@@ -43,19 +44,27 @@ public class TreeGeneration : MonoBehaviour
                 //} Lets try something different
                 float randomValue = Random.Range(0,100);
                 if(randomValue > 90) {
-                    //first get position in the world
-                    Vector3Int worldPosition = new Vector3Int(x, y, 0);
-                    //change it to position on the grid
-                    Vector3Int cellPosition = grid.WorldToCell(worldPosition);
-                    //then change it to the center of that grid, this is where we'll place the object.
-                    Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
+                    Vector3 cellCenter = GenerateCenterTilePosition(x, y);
                     //Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
                     int index = Random.Range(0, desertTrees.Length);
                     Instantiate(desertTrees[index], cellCenter, Quaternion.identity);
-                }                
+                }  else if (randomValue > 80) {
+                    Vector3 cellCenter = GenerateCenterTilePosition(x, y);
+                    Instantiate(mossyRock, cellCenter, Quaternion.identity);
+                }
+
                 
             }
         }
+    }
+    private Vector3 GenerateCenterTilePosition(int x, int y) {
+        //first get position in the world
+        Vector3Int worldPosition = new Vector3Int(x, y, 0);
+        //change it to position on the grid
+        Vector3Int cellPosition = grid.WorldToCell(worldPosition);
+        //then change it to the center of that grid, this is where we'll place the object.
+        Vector3 cellCenter = grid.GetCellCenterWorld(cellPosition);
+        return cellCenter;
     }
 }
 
