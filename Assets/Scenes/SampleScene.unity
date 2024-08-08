@@ -522,10 +522,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floorTiles:
-  - {fileID: 11400000, guid: ac8805fb112930443a8d4a9efecccfea, type: 2}
-  - {fileID: 11400000, guid: 65e97d16cacad5e42a19b7eb67970e4b, type: 2}
-  - {fileID: 11400000, guid: 97bf1f5a6cffe57449117d8ad4eca90b, type: 2}
-  - {fileID: 11400000, guid: 97bf1f5a6cffe57449117d8ad4eca90b, type: 2}
+  - {fileID: 11400000, guid: 65ce06330b61a1449bd762a50fa351b1, type: 2}
+  - {fileID: 11400000, guid: 9cd0c4b67a9e3ec4f8f9405ed9098ca7, type: 2}
+  - {fileID: 11400000, guid: ba2157cff678cbc4988e03c44b19c243, type: 2}
+  - {fileID: 11400000, guid: bd1c94c963e7e874289a3b183ab934cd, type: 2}
   tilemap: {fileID: 10142534}
 --- !u!1001 &11139656
 PrefabInstance:
@@ -2592,20 +2592,19 @@ Camera:
   field of view: 60
   orthographic: 1
   orthographic size: 1.3499999
-
-  m_Depth: -1
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
-  m_TargetEye: 0
+  m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 0
+  m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 0
+  m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!4 &519420032
@@ -9564,7 +9563,7 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687485014}
   m_Enabled: 1
-  m_CellSize: {x: 0.64, y: 0.64, z: 0}
+  m_CellSize: {x: 0.32, y: 0.32, z: 0}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0

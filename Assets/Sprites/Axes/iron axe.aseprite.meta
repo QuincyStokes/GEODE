@@ -121,7 +121,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: iron axe
+  - name: Iron Axe
     originalName: 
     pivot: {x: 0.6037736, y: 0}
     alignment: 9
@@ -132,7 +132,7 @@ ScriptedImporter:
       y: 4
       width: 53
       height: 64
-    spriteID: ec8a056a14e6f494ea8bd11d50e4a2b4
+    spriteID: c00b5b44acb15354ab2545719e8d32cd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,13 +144,13 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 7389916
-    name: iron axe
+    guid: 278707868
+    name: Iron Axe
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: iron axe
+    - name: Iron Axe
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
@@ -158,7 +158,7 @@ ScriptedImporter:
         y: 0
         width: 53
         height: 64
-      spriteId: ec8a056a14e6f494ea8bd11d50e4a2b4
+      spriteId: c00b5b44acb15354ab2545719e8d32cd
     linkedCells: []
     parentIndex: -1
   platformSettings: []
