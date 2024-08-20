@@ -67,4 +67,9 @@ public class EnemyScript : MonoBehaviour
         return false;
 
     }
+    
+    public void TakeDamage(float damage) {
+        print("TAKING DAMAGE " +damage);
+        Health -= damage;
+    }
 }
