@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c53eecec10daabb4493b383ac9afc772
+guid: ebfd66f301d31304494e50f4660fb5d8
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: PLACEHOLDER_Tower
+  - name: Sprite-0001
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 64
-      height: 37
-    spriteID: ed021c6f2be41704d9020ce19d9681e6
+      width: 32
+      height: 12
+    spriteID: c369e03dd2808054ebef668646c0e60b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -29479581
-    name: PLACEHOLDER_Tower
+    guid: -572921211
+    name: Sprite-0001
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: PLACEHOLDER_Tower
+    - name: Sprite-0001
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
         x: 0
-        y: 14
-        width: 64
-        height: 37
-      spriteId: ed021c6f2be41704d9020ce19d9681e6
+        y: 0
+        width: 32
+        height: 12
+      spriteId: c369e03dd2808054ebef668646c0e60b
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 64, y: 64}
+  canvasSize: {x: 32, y: 12}

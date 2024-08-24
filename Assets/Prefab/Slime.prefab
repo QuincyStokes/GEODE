@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622198265252812874}
   - component: {fileID: 8362765720686428432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SlimeJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 3306664955754655518}
   - component: {fileID: 6824946078768213844}
   - component: {fileID: 1761678227394333580}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Slime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -294,6 +294,7 @@ MonoBehaviour:
   slimeJump: {fileID: 8362765720686428432}
   player: {fileID: 0}
   moveSpeed: 0.5
+  collisionOffset: 0.05
   health: 10
 --- !u!95 &1761678227394333580
 Animator:

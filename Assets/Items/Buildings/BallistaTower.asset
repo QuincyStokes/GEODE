@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b713ea4df21198449d51715727f7e5b, type: 3}
-  m_Name: FenceWall
+  m_Name: BallistaTower
   m_EditorClassIdentifier: 
   cooldown: 1
   item_type: 4
@@ -18,13 +18,13 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 3
-  lastTimeDropped: 1.6363614
+  lastTimeDropped: 0
   swingable: 0
   damage: 0
-  swingSpeed: 0
-  swingRadius: 0
-  item_prefab: {fileID: 2310245655287114656, guid: 2b20a6d9bfd64c9438f8c2c8f0920967, type: 3}
-  stackable: 1
-  description: '"Not the most durable, but it''ll hold enemies off for a while."'
-  item_name: Fence Wall
-  item_sprite: {fileID: -832575847698929879, guid: d6d2352497a31674c945624dc86aca3c, type: 3}
+  swingSpeed: 1
+  swingRadius: 90
+  item_prefab: {fileID: 2142478848168754733, guid: 8d5510011abfcdd4fac14a978ce99f0f, type: 3}
+  stackable: 0
+  description: '"Shoots large bolts at incoming enemies. Moderate range, slow speed."'
+  item_name: Ballista Tower
+  item_sprite: {fileID: -6723079614887672254, guid: c53eecec10daabb4493b383ac9afc772, type: 3}
