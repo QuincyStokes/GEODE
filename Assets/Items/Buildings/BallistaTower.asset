@@ -18,13 +18,13 @@ MonoBehaviour:
   tile: {fileID: 0}
   range: {x: 5, y: 5}
   pickupCooldown: 3
-  lastTimeDropped: 0
+  lastTimeDropped: 1.8898613
   swingable: 0
   damage: 0
   swingSpeed: 1
   swingRadius: 90
-  item_prefab: {fileID: 2142478848168754733, guid: 8d5510011abfcdd4fac14a978ce99f0f, type: 3}
+  item_prefab: {fileID: 750974098704207615, guid: 9116343d7e7099943acce50d393c8eee, type: 3}
   stackable: 0
   description: '"Shoots large bolts at incoming enemies. Moderate range, slow speed."'
   item_name: Ballista Tower
-  item_sprite: {fileID: -6723079614887672254, guid: c53eecec10daabb4493b383ac9afc772, type: 3}
+  item_sprite: {fileID: 1380890591499577139, guid: f473c64f8632acd49b5eb11c4e171842, type: 3}

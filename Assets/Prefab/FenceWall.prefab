@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1181314926873638850}
   - component: {fileID: 5950776549920133871}
   - component: {fileID: -2280254566524700346}
+  - component: {fileID: 5015789449317421583}
   m_Layer: 7
   m_Name: FenceWall
   m_TagString: Destructable
@@ -177,10 +178,27 @@ MonoBehaviour:
   HealthBarGreen: {fileID: 3782200690779897768}
   spriteRenderer: {fileID: 5389135110836729094}
   lootPrefab: {fileID: 1268131264684521990, guid: 9aa1d6b9353b456419b0f0006c47c008, type: 3}
+  hittableByPlayer: 0
   itemDrop: {fileID: 11400000, guid: 1afe81e906420724a95f2f2a14a1ee72, type: 2}
   HitSFX:
   - treehit1
   action_type: 5
+--- !u!114 &5015789449317421583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2310245655287114656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &4212537306708568848
 PrefabInstance:
   m_ObjectHideFlags: 0

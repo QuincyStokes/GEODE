@@ -10,4 +10,5 @@ public class RuleTileWithData : RuleTile
     public ItemScriptableObject entity;
     public actionType action_type;
     public int health;
+
 }

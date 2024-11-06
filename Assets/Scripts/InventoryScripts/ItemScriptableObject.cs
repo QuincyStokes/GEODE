@@ -11,7 +11,7 @@ public class ItemScriptableObject : ScriptableObject
     public itemType item_type;
     public actionType action_type;
     public TileBase tile;
-    public Vector2Int range = new Vector2Int(5,5);
+    public int range = 5;
     public float pickupCooldown;
     public float lastTimeDropped;
     public bool swingable;

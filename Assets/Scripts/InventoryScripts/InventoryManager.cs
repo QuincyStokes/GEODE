@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryManager : MonoBehaviour, IItemContainer
@@ -36,6 +37,7 @@ public class InventoryManager : MonoBehaviour, IItemContainer
             }
         }
         if (Input.GetKeyDown(KeyCode.E)) {
+            print("E pressed!");
             if(inventory.activeSelf == true) {
                 inventory.SetActive(false);
                 craftingMenu.SetActive(false);
@@ -68,7 +70,21 @@ public class InventoryManager : MonoBehaviour, IItemContainer
             inventorySlots[newValue].Select();
             selectedSlot = newValue;
         }
-       
+        UpdateCurrentItem();
+    }
+
+    void UpdateCurrentItem()
+    {
+        InventorySlot slot = inventorySlots[selectedSlot];
+        InventoryItem itemInSlot = slot.GetComponentInChildren<InventoryItem>();
+
+        if(itemInSlot != null) {
+            ItemManager.instance.SetCurrentItem(itemInSlot.item);
+        }
+        else 
+        {
+            ItemManager.instance.SetCurrentItem(null);
+        }
     }
 
     public bool AddItem(ItemScriptableObject item) {
@@ -121,6 +137,7 @@ public class InventoryManager : MonoBehaviour, IItemContainer
                 itemInSlot.count--;
                 if(itemInSlot.count <= 0) {
                     Destroy(itemInSlot.gameObject);
+                    UpdateCurrentItem();
                 } else {
                     itemInSlot.RefreshCount();
                 }

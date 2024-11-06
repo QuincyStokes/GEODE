@@ -16,6 +16,7 @@ public class TreeGeneration : MonoBehaviour
     void Start()
     {
         GenerateTrees();
+        NavMeshManager.instance.UpdateNevMesh();
     }
 
     void GenerateTrees() {

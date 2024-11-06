@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -14,14 +15,19 @@ public class EnemyScript : MonoBehaviour
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     public float collisionOffset = 0.05f;
 
+    public NavMeshAgent agent;
+
     public void Start() {
         animationManager = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.Find("Player");
+        player = GameObject.Find("NewPlayer");
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     public void Update() {
-        // Calculate the direction from the enemy to the player
+        /*// Calculate the direction from the enemy to the player
         Vector2 direction = (player.transform.position - transform.position).normalized;
 
         // Move the enemy towards the player
@@ -33,6 +39,8 @@ public class EnemyScript : MonoBehaviour
                         success = TryMove(new Vector2(0, direction.y));
                     }
                 }
+                */
+        agent.SetDestination(player.transform.position);
        
     }
     public float Health{

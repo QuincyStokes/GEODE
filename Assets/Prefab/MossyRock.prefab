@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5164814266176646920}
   - component: {fileID: 4916134587727666195}
   - component: {fileID: 977304761365924686}
+  - component: {fileID: -6058775748431953603}
   m_Layer: 7
   m_Name: MossyRock
   m_TagString: Destructable
@@ -172,6 +173,22 @@ MonoBehaviour:
   HitSFX:
   - 
   action_type: 1
+--- !u!114 &-6058775748431953603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6459978787359829008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9809bf1345abc5648af68b3a82653f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &6573650159545630819
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -26,7 +26,7 @@ public class BuildingSystem : MonoBehaviour {
     void Update() {
 
         ItemScriptableObject item = InventoryManager.instance.GetSelectedItem(false);
-        PlayerController.currentItem = item;
+        ItemManager.instance.currentItem = item;
         playerPos = highlightTilemap.WorldToCell(transform.position);
         //if we're holding something, anything, try to highlight it
         if (item != null)
@@ -69,14 +69,13 @@ public class BuildingSystem : MonoBehaviour {
             //Get the new tile
             //TileBase tile = buildingTilemap.GetTile(mouseGridPos);
 
-            if(InRange(playerPos, mouseGridPos, (Vector3Int)currentItem.range)) { //if we're in range
+            if(InRange(playerPos, mouseGridPos, currentItem.range)) { //if we're in range
                 Collider2D collider = Physics2D.OverlapPoint(grid.GetCellCenterWorld(mouseGridPos), layermask);
                
                 if(CheckConditionGO(collider, currentItem)) {
                 //if (CheckCondition(buildingTilemap.GetTile<RuleTileWithData>(mouseGridPos), currentItem)){ //if the tile hovered's type matches the item we're holding
                     //if(!tileOccupancyChecker.IsWorldPosOccupied(grid.GetCellCenterWorld(mouseGridPos))){//If the tile is occupied already
-                        //In the future, highlightTile should be the preview of whatever we're holding.
-
+                        //In the future, highlight Tile should be the preview of whatever we're holding.
                         highlightTilemap.SetTile(mouseGridPos, highlightTile);
                         highlightedTilePos = mouseGridPos;
                         highlighted = true;
@@ -85,7 +84,7 @@ public class BuildingSystem : MonoBehaviour {
                      
                 } else {
                     highlighted = false;
-                    highlightedTilePos = new Vector3Int(-999, 999, 0);
+                    highlightedTilePos = new Vector3Int(-999, 999, 0); //should probably change this lmao
                 }
             } else {
                 highlighted = false;
@@ -95,9 +94,8 @@ public class BuildingSystem : MonoBehaviour {
     }
     
 
-    private bool InRange(Vector3Int positionA, Vector3Int positionB, Vector3Int range) {
-        Vector3Int distance = positionA - positionB;
-        return !(Mathf.Abs(distance.x) >= range.x || Mathf.Abs(distance.y) >= range.y);
+    private bool InRange(Vector3Int positionA, Vector3Int positionB, int range) {
+        return (positionA - positionB).sqrMagnitude <= range * range;
     }
     private bool CheckConditionGO(Collider2D collider, ItemScriptableObject currentItem) {
         //if we're holding a placeable item and there is no collider at current location, it's a placeable spot
@@ -161,6 +159,7 @@ public class BuildingSystem : MonoBehaviour {
             InventoryManager.instance.GetSelectedItem(true);
             //buildingTilemap.SetTile(position, itemToBuild.tile);
             Instantiate(itemToBuild.item_prefab, cellPositionAsWorld, Quaternion.identity);
+            NavMeshManager.instance.UpdateNevMesh();
 
 
 

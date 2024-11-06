@@ -17,3 +17,6 @@ MonoBehaviour:
   m_DefaultColliderType: 1
   m_TilingRules: []
   item: {fileID: 11400000, guid: 1afe81e906420724a95f2f2a14a1ee72, type: 2}
+  entity: {fileID: 0}
+  action_type: 0
+  health: 0
