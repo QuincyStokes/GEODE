@@ -60,7 +60,10 @@ public class MoveTowardsPlayer : MonoBehaviour
             switch (stateManager.currentState)
             {
                 case EnemyStateManager.EnemyState.Idle:
-                    agent.ResetPath();
+                    if(agent.enabled == true) {
+                        agent.ResetPath();
+                    }
+                   
                     break;
                 
                 case EnemyStateManager.EnemyState.Chasing:
@@ -79,7 +82,7 @@ public class MoveTowardsPlayer : MonoBehaviour
                 case EnemyStateManager.EnemyState.Shooting:
                     break; //havent implemented shooting at all
 
-                case EnemyStateManager.EnemyState.Recoiling:
+                case EnemyStateManager.EnemyState.Knockback:
                     break; //havent implemented recoiling
 
                 case EnemyStateManager.EnemyState.Dead:

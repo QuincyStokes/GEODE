@@ -12,7 +12,7 @@ public class EnemyStateManager : MonoBehaviour
         Attacking = 2,
         Lunging = 3, 
         Shooting = 4,
-        Recoiling = 5,
+        Knockback = 5,
         Dead = 6
     }
 

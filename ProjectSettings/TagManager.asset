@@ -8,6 +8,7 @@ TagManager:
   - Pickupable
   - Obstacle
   - Destructable
+  - Swingable
   layers:
   - Default
   - TransparentFX

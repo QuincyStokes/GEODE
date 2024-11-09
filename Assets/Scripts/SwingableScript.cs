@@ -7,10 +7,17 @@ public class SwingableScript : MonoBehaviour
    private void OnTriggerEnter2D(Collider2D other) {
         print("Hit something!");
         if(other.tag == "Enemy") {
-            EnemyScript enemy = other.GetComponent<EnemyScript>();
-                if (enemy != null) {
-                    enemy.Health -= PlayerController.currentItem.damage;
-                }
+            EnemyHealthController enemy = other.GetComponent<EnemyHealthController>();
+            if (enemy != null) {
+                enemy.TakeDamage(ItemManager.instance.currentItem.damage);
+            }
+            //  YUCKY WAY TO DO THIS..
+            EnemyCollision enemyCol = other.GetComponent<EnemyCollision>();
+            if(enemyCol)
+            {   
+                //StartCoroutine(enemyCol.Knockback(transform.position));
+                //StartCoroutine(enemyCol.DamageColorChange());
+            }
         } 
         else if (other.tag == "Destructable") {
             //"other" is probably the whole tilemap

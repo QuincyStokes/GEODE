@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,6 +13,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool canMove = true;
     private List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
+    [SerializeField] private float recoilSpeed;
+    [SerializeField] private float recoilDuration;
 
     void Start()
     {
@@ -45,12 +49,10 @@ public class PlayerMovement : MonoBehaviour
         int count = rb.Cast(direction, movementFilter, castCollisions, deltaMoveSpeed + collisionOffset);
         if (count == 0)
         {
-            print("Cast hit nothing.");
             rb.MovePosition(rb.position + direction * deltaMoveSpeed);
             return true;
         } else 
         {
-             print("Cast hit something.");
         }
        
         return false;
@@ -70,4 +72,6 @@ public class PlayerMovement : MonoBehaviour
     {
         this.canMove = canMove;
     }
+
+    
 }

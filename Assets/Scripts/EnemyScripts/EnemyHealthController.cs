@@ -8,8 +8,12 @@ public class EnemyHealthController : MonoBehaviour
 
     private EnemyStateManager stateManager;
 
+
+    void Start() {
+        stateManager = GetComponent<EnemyStateManager>();
+    }
     //Lets do getter and setter for health
-    private float Health {
+    public float Health {
         set {
             health = value;
             if (health <= 0)
@@ -27,7 +31,7 @@ public class EnemyHealthController : MonoBehaviour
     private void Defeated() 
     {
         stateManager.currentState = EnemyStateManager.EnemyState.Dead;
-        RemoveEnemy();
+        //RemoveEnemy();
     }
 
     private void RemoveEnemy() 

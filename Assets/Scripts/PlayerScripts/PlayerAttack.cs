@@ -71,8 +71,8 @@ public class PlayerAttack : MonoBehaviour
         swingable.SetActive(false);
     }
 
-        void UpdateCurrentItem(ItemScriptableObject newItem)
-            {
-                currentItem = newItem;
-            }
+    void UpdateCurrentItem(ItemScriptableObject newItem)
+    {
+        currentItem = newItem;
+    }
 }

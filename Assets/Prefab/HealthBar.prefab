@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1411459441006953224}
   - component: {fileID: 7912751156262292565}
   m_Layer: 0
-  m_Name: GreenHealthBar_0
+  m_Name: Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8507803440501319061}
   - component: {fileID: 2090063945034690771}
   m_Layer: 0
-  m_Name: HealthbarBack
+  m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
