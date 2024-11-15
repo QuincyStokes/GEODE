@@ -1,21 +1,37 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class GridGenerator : MonoBehaviour
 {
+    public static GridGenerator instance;
+    
+
     [SerializeField]
-    public static int gridSizeX = 100;
+    public int gridSizeX = 100;
     [SerializeField]
-    public static int gridSizeY = 100;
+    public int gridSizeY = 100;
     public TileBase[] floorTiles;
     public Tilemap tilemap;
+    
 
+ void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+            return;
+        }
+
+    }
     void Start()
     {
         GenerateGrid();
     }
+
+    
 
     void GenerateGrid(){
         int startX = 0 - gridSizeX/2;

@@ -7,10 +7,10 @@ public class TreeGeneration : MonoBehaviour
 {
     [SerializeField] private Grid grid;
 
-    private int gridSizeX = GridGenerator.gridSizeX/7; // div by 12
+    private int gridSizeX = GridGenerator.instance.gridSizeX/7; // div by 12
     
 
-    private int gridSizeY = GridGenerator.gridSizeY/7;
+    private int gridSizeY = GridGenerator.instance.gridSizeY/7;
     public GameObject[] desertTrees;
     public GameObject mossyRock;
     void Start()

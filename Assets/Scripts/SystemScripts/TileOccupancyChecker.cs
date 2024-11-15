@@ -6,8 +6,18 @@ public class TileOccupancyChecker : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    public static TileOccupancyChecker instance;
     public Grid grid;
     public LayerMask buildingLayer;
+
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+            return;
+        }
+    }
     void Start()
     {
         if (grid == null) {
