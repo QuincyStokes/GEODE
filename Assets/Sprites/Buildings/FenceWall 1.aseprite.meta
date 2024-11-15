@@ -32,10 +32,10 @@ ScriptedImporter:
     sRGBTexture: 1
     spriteMode: 2
     spriteExtrude: 1
-    spriteMeshType: 0
+    spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 64
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -97,7 +97,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638556069002361608
+  platformSettingsDirtyTick: 638669376625040174
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -123,16 +123,16 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: FenceWall 1
     originalName: 
-    pivot: {x: 0.55172414, y: 0}
+    pivot: {x: 0.44827586, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 116
-      height: 32
-    spriteID: 0a1ffbb9f23bab04b97bdaeac2523d13
+      width: 232
+      height: 64
+    spriteID: 3b4aed8403f683443a7e98477e38be84
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -151,18 +151,13 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 32
-      height: 32
-    spriteID: 256dcb1410db3644b8d604162bc7d6f8
+      width: 64
+      height: 64
+    spriteID: 29d875d36be1e48448ec810d95dff3b8
     spriteBone: []
     spriteOutline: []
     vertices: []
-    spritePhysicsOutline:
-    - outline:
-      - {x: -16, y: -16}
-      - {x: -16, y: -5}
-      - {x: 16, y: -5}
-      - {x: 16, y: -16}
+    spritePhysicsOutline: []
     indices: 
     edges: []
     tessellationDetail: 0
@@ -174,22 +169,15 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 36
+      x: 68
       y: 4
-      width: 32
-      height: 32
-    spriteID: 117fda378cdf0074b8bd5fa59fb20fcd
+      width: 64
+      height: 64
+    spriteID: b0bb255d9f495b64cb8f7a681748b60f
     spriteBone: []
     spriteOutline: []
     vertices: []
-    spritePhysicsOutline:
-    - outline:
-      - {x: -4, y: -16}
-      - {x: -4, y: 16}
-      - {x: 4, y: 16}
-      - {x: 4, y: -5}
-      - {x: 16, y: -5}
-      - {x: 16, y: -16}
+    spritePhysicsOutline: []
     indices: 
     edges: []
     tessellationDetail: 0
@@ -201,45 +189,35 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 68
+      x: 132
       y: 4
-      width: 32
-      height: 32
-    spriteID: 9d6ff1840491f0649affcfb4da214150
+      width: 64
+      height: 64
+    spriteID: e9c42b5b2e094ca4683da29399669f1f
     spriteBone: []
     spriteOutline: []
     vertices: []
-    spritePhysicsOutline:
-    - outline:
-      - {x: -16, y: -16}
-      - {x: -16, y: -5}
-      - {x: 4, y: -5}
-      - {x: 4, y: -16}
+    spritePhysicsOutline: []
     indices: 
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   - name: FenceWall 1_3
     originalName: 
-    pivot: {x: 0.5714286, y: 0.5}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 100
+      x: 196
       y: 4
-      width: 28
-      height: 32
-    spriteID: 67d6cdc1a7a17c14fabbceb97619ca90
+      width: 64
+      height: 64
+    spriteID: 56532caeb4ee0d64db01b577e905dfa9
     spriteBone: []
     spriteOutline: []
     vertices: []
-    spritePhysicsOutline:
-    - outline:
-      - {x: -2, y: -16}
-      - {x: -2, y: 16}
-      - {x: 6, y: 16}
-      - {x: 6, y: -16}
+    spritePhysicsOutline: []
     indices: 
     edges: []
     tessellationDetail: 0
@@ -258,9 +236,9 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 116
-        height: 32
-      spriteId: fbfa73e06e2f7f841974ae4cc534b21e
+        width: 256
+        height: 64
+      spriteId: 3b4aed8403f683443a7e98477e38be84
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -300,7 +278,7 @@ ScriptedImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
-  generatePhysicsShape: 1
+  generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 128, y: 32}
+  canvasSize: {x: 256, y: 64}

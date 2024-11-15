@@ -64,7 +64,7 @@ public class EnemyCollision : MonoBehaviour
         print("SETTING VELOCITY");
         
                                         //no idea what to multiply this by
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(.2f);
         rb.isKinematic = true;
         rb.velocity = Vector3.zero;
         print("VELOCITY RESET TO 0");
@@ -82,6 +82,15 @@ public class EnemyCollision : MonoBehaviour
         sr.color = originalColor;
     }
 
+    public void StartKnockback(Vector3 position)
+    {
+        StartCoroutine(Knockback(position));
+    }
+
+    public void StartDamageColorChange()
+    {
+        StartCoroutine(DamageColorChange());
+    }
     
 
 }

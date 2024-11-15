@@ -31,7 +31,7 @@ public class EnemyHealthController : MonoBehaviour
     private void Defeated() 
     {
         stateManager.currentState = EnemyStateManager.EnemyState.Dead;
-        //RemoveEnemy();
+        RemoveEnemy();
     }
 
     private void RemoveEnemy() 

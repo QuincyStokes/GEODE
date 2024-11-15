@@ -15,8 +15,9 @@ public class SwingableScript : MonoBehaviour
             EnemyCollision enemyCol = other.GetComponent<EnemyCollision>();
             if(enemyCol)
             {   
-                //StartCoroutine(enemyCol.Knockback(transform.position));
-                //StartCoroutine(enemyCol.DamageColorChange());
+                enemyCol.StartKnockback(transform.position);
+                enemyCol.StartDamageColorChange();
+                
             }
         } 
         else if (other.tag == "Destructable") {

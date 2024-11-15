@@ -50,8 +50,10 @@ GameObject:
   - component: {fileID: 6970600422887600440}
   - component: {fileID: 1538137453754608376}
   - component: {fileID: 7358054079032400953}
+  - component: {fileID: 4115317758610978238}
   - component: {fileID: 1378195880010743535}
   - component: {fileID: 6636220170179477115}
+  - component: {fileID: 1962712013468600719}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -152,7 +154,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 1
   m_SleepingMode: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!114 &1816623149287750900
 MonoBehaviour:
@@ -170,18 +172,20 @@ MonoBehaviour:
   collisionOffset: 0.05
   movementFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 1
+      m_Bits: 129
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  recoilSpeed: 1
+  recoilDuration: 0.1
 --- !u!95 &5565443270394960894
 Animator:
   serializedVersion: 5
@@ -300,6 +304,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.09141922, y: 0.021881424}
   m_EdgeRadius: 0
+--- !u!114 &4115317758610978238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227583228704817323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a0fbce55bad2d442b15718c0af1403e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthText: {fileID: 0}
+  playerMaxHealth: 50
+  HealthBarGreen: {fileID: 0}
 --- !u!114 &1378195880010743535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +370,20 @@ MonoBehaviour:
   layermask:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1962712013468600719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7227583228704817323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a92bfe9bec8bcc44930edfb05addc29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  recoilSpeed: 1
+  recoilDuration: 0.1
 --- !u!1001 &3782942695887652246
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -366,6 +399,10 @@ PrefabInstance:
     - target: {fileID: -2253911629886400664, guid: c390bed9ebe7e534fbe4041d66014e80, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: c390bed9ebe7e534fbe4041d66014e80, type: 3}
+      propertyPath: m_TagString
+      value: Swingable
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: c390bed9ebe7e534fbe4041d66014e80, type: 3}
       propertyPath: m_SortingOrder

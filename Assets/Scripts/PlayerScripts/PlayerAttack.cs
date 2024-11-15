@@ -11,14 +11,13 @@ public class PlayerAttack : MonoBehaviour
     private bool isCoroutineRunning = false;
     private SpriteRenderer swingableSR;
     private PlayerAnimation playerAnimation;
-    private ItemManager itemManager;
 
     void Start()
     {
         playerAnimation = GetComponent<PlayerAnimation>();
         swingableSR = swingable.GetComponent<SpriteRenderer>();
 
-        itemManager.OnItemChanged += UpdateCurrentItem;
+        ItemManager.instance.OnItemChanged += UpdateCurrentItem;
     }
 
     public void Attack()
