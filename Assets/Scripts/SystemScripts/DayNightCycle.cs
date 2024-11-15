@@ -5,6 +5,16 @@ using UnityEngine.Rendering.Universal;
 using TMPro;
 public class DayNightCycle : MonoBehaviour
 {
+    public static DayNightCycle instance;
+    void Awake() {
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     
     private Light2D sunlight;
     //24 hours
@@ -20,7 +30,7 @@ public class DayNightCycle : MonoBehaviour
 
     private float totalDayTimeInMinutes;
     private float totalDayTimeInSeconds;
-    private bool isDayTime;
+    public bool isDayTime;
     private float currentTime;
     private string dayState;
     private string timeSuffix;

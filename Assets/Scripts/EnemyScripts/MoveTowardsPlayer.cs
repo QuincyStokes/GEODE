@@ -111,7 +111,7 @@ public class MoveTowardsPlayer : MonoBehaviour
             //Can only idle from chasing
             else if (distanceBetween > 2)
             {
-                stateManager.SetState(EnemyStateManager.EnemyState.Idle);
+                stateManager.SetState(EnemyStateManager.EnemyState.Chasing);
             }
         }
     }

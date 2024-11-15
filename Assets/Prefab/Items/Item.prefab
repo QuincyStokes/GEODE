@@ -310,9 +310,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 179.99902, y: -130.00005}
+  m_AnchoredPosition: {x: 29.460938, y: -230.18504}
   m_SizeDelta: {x: 301.074, y: 200.37}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!222 &7014428987597270142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -422,13 +422,14 @@ GameObject:
   - component: {fileID: 1132650100042930965}
   - component: {fileID: 7621843519810891092}
   - component: {fileID: 760356197942221792}
+  - component: {fileID: 6353421175538306304}
   m_Layer: 5
   m_Name: Tooltip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7254104087332224558
 RectTransform:
   m_ObjectHideFlags: 0
@@ -444,10 +445,10 @@ RectTransform:
   - {fileID: 4734090853758662565}
   m_Father: {fileID: 6934708485924002853}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
-  m_SizeDelta: {x: 360, y: 260}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 175, y: 180}
+  m_SizeDelta: {x: 350, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1132650100042930965
 CanvasRenderer:
@@ -510,3 +511,15 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 2
   m_TargetDisplay: 0
+--- !u!114 &6353421175538306304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7265502475368686820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7664f4a5a4b9d684baef45c9d14ff044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
