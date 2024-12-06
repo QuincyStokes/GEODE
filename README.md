@@ -7,4 +7,6 @@ These crystals are having all sorts of affects in the environment, and you must 
 
 There is no current build because the core gameplay loop is not finished, but stay tuned!
 
+Any questions? Message me on Discord @heyitsphd
+
 
