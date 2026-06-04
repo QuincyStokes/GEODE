@@ -16,7 +16,7 @@
 
 **[Now on Steam — Free to Play](https://store.steampowered.com/)** · 100% positive player rating
 
-<!-- ![GEODE gameplay](docs/screenshot.png)  <-- add a real screenshot/GIF here -->
+![GEODE gameplay](MainCapsule.png)  
 
 ## About
 GEODE takes place in a strangely corrupt world, where meteors that landed thousands of years ago are now eroding away, revealing strange crystals and minerals. These crystals warp the environment around them. Explore, build defenses, and survive with friends for as long as you can.
