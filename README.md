@@ -14,7 +14,7 @@
 **An open-world co-op survival + tower-defense game, solo-developed in Unity.**
 *Art by Annika Stokes.*
 
-🎮 **[Now on Steam — Free to Play](https://store.steampowered.com/)** · 100% positive player rating
+**[Now on Steam — Free to Play](https://store.steampowered.com/)** · 100% positive player rating
 
 <!-- ![GEODE gameplay](docs/screenshot.png)  <-- add a real screenshot/GIF here -->
 
@@ -22,9 +22,9 @@
 GEODE takes place in a strangely corrupt world, where meteors that landed thousands of years ago are now eroding away, revealing strange crystals and minerals. These crystals warp the environment around them. Explore, build defenses, and survive with friends for as long as you can.
 
 ## Features
-- 🤝 **Online co-op multiplayer** for up to 12 players
-- 🏰 **Survival meets tower defense** in an open world
-- 🌌 A corrupt, crystal-warped world to explore
+- **Online co-op multiplayer** for up to 12 players
+- **Survival meets tower defense** in an open world
+- A corrupt, crystal-warped world to explore
 
 ## Tech
 - **Engine / Language:** Unity, C#
@@ -33,4 +33,4 @@ GEODE takes place in a strangely corrupt world, where meteors that landed thousa
 - **Performance:** profiled and optimized with the Unity Profiler
 
 ## Links
-▶️ [Steam](https://store.steampowered.com/) · 🌐 [quincystokes.com](https://www.quincystokes.com/) · 💼 [LinkedIn](https://www.linkedin.com/in/quincy-stokes)
+[Steam](https://store.steampowered.com/) · [quincystokes.com](https://www.quincystokes.com/) · [LinkedIn](https://www.linkedin.com/in/quincy-stokes)
