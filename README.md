@@ -14,7 +14,7 @@
 **An open-world co-op survival + tower-defense game, solo-developed in Unity.**
 *Art by Annika Stokes.*
 
-**[Now on Steam — Free to Play](https://store.steampowered.com/)** · 100% positive player rating
+**[Now on Steam — Free to Play](https://store.steampowered.com/app/4213520/GEODE/)** · 100% positive player rating
 
 ![GEODE gameplay](MainCapsule.png)  
 
